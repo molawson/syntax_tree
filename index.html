@@ -449,6 +449,10 @@
 <pre>[warn] path/to/file.rb
 The listed files did not match the expected format.</pre>
 
+<p>To change the print width that you are checking against, specify the <code>--print-width</code> option, as in:</p>
+
+<pre>stree check --print-width=100 path/to/file.rb</pre>
+
 <h3 id="label-format">format<span><a href="#label-format">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>This command will output the formatted version of each of the listed files. Importantly, it will not write that content back to the source files. It is meant to display the formatted version only.</p>
@@ -460,6 +464,10 @@ The listed files did not match the expected format.</pre>
 
 <pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
 </pre>
+
+<p>To change the print width that you are formatting with, specify the <code>--print-width</code> option, as in:</p>
+
+<pre>stree format --print-width=100 path/to/file.rb</pre>
 
 <h3 id="label-json">json<span><a href="#label-json">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -534,6 +542,10 @@ The listed files did not match the expected format.</pre>
 <p>This will list every file that is being formatted. It will output light gray if the file already matches the expected format. It will output in regular color if it does not.</p>
 
 <pre>path/to/file.rb 0ms</pre>
+
+<p>To change the print width that you are writing with, specify the <code>--print-width</code> option, as in:</p>
+
+<pre>stree write --print-width=100 path/to/file.rb</pre>
 
 <h2 id="label-Library">Library<span><a href="#label-Library">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
