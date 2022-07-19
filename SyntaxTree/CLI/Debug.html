@@ -131,7 +131,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 125</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 127</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">print_width:</span>)
   <span class="ruby-ivar">@print_width</span> = <span class="ruby-identifier">print_width</span>
 <span class="ruby-keyword">end</span></pre>
@@ -159,7 +159,7 @@
           
 
           <div class="method-source-code" id="failure-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 145</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 149</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">failure</span>
   <span class="ruby-identifier">warn</span>(<span class="ruby-string">&quot;The listed files could not be formatted idempotently.&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -180,14 +180,16 @@
           
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 129</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">item</span>)
   <span class="ruby-identifier">handler</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">handler</span>
 
   <span class="ruby-identifier">warning</span> = <span class="ruby-node">&quot;[#{Color.yellow(&quot;warn&quot;)}] #{item.filepath}&quot;</span>
   <span class="ruby-identifier">formatted</span> = <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">item</span>.<span class="ruby-identifier">source</span>, <span class="ruby-identifier">print_width</span>)
 
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NonIdempotentFormatError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">formatted</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatted</span>, <span class="ruby-identifier">print_width</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">formatted</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatted</span>, <span class="ruby-identifier">print_width</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NonIdempotentFormatError</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span>
   <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">warning</span>)
   <span class="ruby-identifier">raise</span>
@@ -209,7 +211,7 @@
           
 
           <div class="method-source-code" id="success-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 141</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 145</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">success</span>
   <span class="ruby-identifier">puts</span>(<span class="ruby-string">&quot;All files can be formatted idempotently.&quot;</span>)
 <span class="ruby-keyword">end</span></pre>

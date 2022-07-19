@@ -112,7 +112,7 @@
           
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 177</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 181</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">item</span>)
   <span class="ruby-identifier">object</span> = <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">JSONVisitor</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-identifier">item</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">item</span>.<span class="ruby-identifier">source</span>))
   <span class="ruby-identifier">puts</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">object</span>)
