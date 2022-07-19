@@ -151,7 +151,7 @@
     <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
   <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;lsp&quot;</span>
     <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;syntax_tree/language_server&quot;</span>
-    <span class="ruby-constant">LanguageServer</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">run</span>
+    <span class="ruby-constant">LanguageServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">print_width:</span> <span class="ruby-identifier">print_width</span>).<span class="ruby-identifier">run</span>
     <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
   <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;version&quot;</span>
     <span class="ruby-identifier">puts</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>

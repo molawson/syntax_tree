@@ -123,6 +123,16 @@
         
         </div>
       </div>
+      <div id="attribute-i-print_width" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">print_width</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
     </section>
 
 
@@ -134,7 +144,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(input: $stdin, output: $stdout)</span>
+            class="method-args">( input: $stdin, output: $stdout, print_width: DEFAULT_PRINT_WIDTH )</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -143,9 +153,14 @@
 
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 18</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">input:</span> <span class="ruby-identifier">$stdin</span>, <span class="ruby-value">output:</span> <span class="ruby-identifier">$stdout</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
+  <span class="ruby-value">input:</span> <span class="ruby-identifier">$stdin</span>,
+  <span class="ruby-value">output:</span> <span class="ruby-identifier">$stdout</span>,
+  <span class="ruby-value">print_width:</span> <span class="ruby-constant">DEFAULT_PRINT_WIDTH</span>
+)
   <span class="ruby-ivar">@input</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">binmode</span>
   <span class="ruby-ivar">@output</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">binmode</span>
+  <span class="ruby-ivar">@print_width</span> = <span class="ruby-identifier">print_width</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -171,7 +186,7 @@
           <p>rubocop:disable Layout/LineLength</p>
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 24</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
   <span class="ruby-identifier">store</span> =
     <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">uri</span><span class="ruby-operator">|</span>
